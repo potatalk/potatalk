@@ -7,6 +7,7 @@ html {
 }
 
 body {
+    overflow-x: hidden;
     font-family: Pretendard Variable, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
@@ -28,6 +29,30 @@ button {
     background-color: transparent;
     border: none;
     cursor: pointer;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+li,
+ol,
+ul {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Pretendard Variable, -apple-system, BlinkMacSystemFont, system-ui, Roboto, Helvetica Neue, Segoe UI, Apple SD Gothic Neo, Noto Sans KR, Malgun Gothic, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+    box-sizing: border-box;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .header-nav {
@@ -402,6 +427,9 @@ button {
     flex-shrink: 0;
     width: 100%;
     height: fit-content;
+}
+
+.banner-margin {
     margin-left: 0;
 }
 
@@ -454,7 +482,7 @@ button {
 
 .left-arrow-box {
     width: 44px;
-    right: 44px;
+    height: 44px;
     display: flex;
     position: relative;
     cursor: pointer;
@@ -502,6 +530,7 @@ button {
     position: absolute;
     border-radius: 12px;
     top: -4px;
+    right: -4px;
     bottom: -4px;
     left: -4px;
     transition: background-color 0.1s ease-in-out;
@@ -511,4 +540,251 @@ button {
 .banner-separation {
     height: 53px;
     flex: 0 0 auto;
+}
+
+.category-all-llm-container {
+    -webkit-box-pack: start;
+    justify-content: start;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.category-llm-container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1120px;
+}
+
+.category-background {
+    border-radius: 16px;
+    background-color: #ffffff;
+    border-width: 1px;
+}
+
+.category-separate {
+    -webkit-box-pack: start;
+    justify-content: start;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.llm-title {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    color: #000000;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+    -webkit-font-smoothing: antialiased;
+    will-change: transform, opacity;
+    transition: transform 1000ms ease 300ms, opacity 1000ms ease;
+}
+
+.llm-title-separate {
+    height: 20px;
+    flex: 0 0 auto;
+}
+
+.llm-animate-all-box {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px);
+    -webkit-box-pack: start;
+    justify-content: start;
+    flex-direction: column;
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    will-change: transform, opacity;
+    transition: transform 1000ms ease 300ms, opacity 1000ms ease;
+}
+
+.llm-model-box {
+    display: block;
+    -webkit-box-pack: start;
+}
+
+.llm-box-graph {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0px;
+}
+
+.llm-model-link1 {
+    flex: 0 1 calc((100% - 80px) / 5);
+    margin-top: 0;
+    margin-left: 0;
+    display: flex;
+}
+
+.model-link1 {
+    cursor: pointer;
+    width: 100%;
+}
+
+.model-all-box {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 96px;
+    border-radius: 8px;
+    background-color: transparent;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e9ecef;
+    width: 100%;
+    transition: all 0.1s ease-in-out;
+    position: relative;
+}
+
+.model-piece {
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    -webkit-box-align: start;
+    align-content: start;
+    flex-wrap: nowrap;
+}
+
+.piece-text {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    -webkit-font-smoothing: antialiased;
+    color: #17181a;
+    text-align: initial;
+    white-space: nowrap;
+}
+
+.piece1-icon {
+    right: 20px;
+    bottom: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+.llm-model-link2 {
+    flex: 0 1 calc((100% - 80px) / 5);
+    margin-top: 0;
+    margin-left: 20px;
+    display: flex;
+}
+
+.model-link2 {
+    cursor: pointer;
+    width: 100%;
+}
+
+.piece2-icon {
+    right: 20px;
+    bottom: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+.llm-model-link3 {
+    flex: 0 1 calc((100% - 80px) / 5);
+    margin-top: 0;
+    margin-left: 20px;
+    display: flex;
+}
+
+.model-link3 {
+    cursor: pointer;
+    width: 100%;
+}
+
+.piece3-icon {
+    right: 20px;
+    bottom: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+.llm-model-link4 {
+    flex: 0 1 calc((100% - 80px) / 5);
+    margin-top: 0;
+    margin-left: 20px;
+    display: flex;
+}
+
+.model-link4 {
+    cursor: pointer;
+    width: 100%;
+}
+
+.piece4-icon {
+    right: 20px;
+    bottom: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+.llm-model-link5 {
+    flex: 0 1 calc((100% - 80px) / 5);
+    margin-top: 0;
+    margin-left: 20px;
+    display: flex;
+}
+
+.model-link5 {
+    cursor: pointer;
+    width: 100%;
+}
+
+.piece5-icon {
+    right: 20px;
+    bottom: 20px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: row;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    position: absolute;
+}
+
+.end-context-container {
+    background-color: #17181a;
+    height: 100vh;
+}
+
+.end-text {
+    color: #fff;
+    text-align: center; /* 텍스트를 중앙에 정렬 */
+    padding-top: 20vh;
 }
