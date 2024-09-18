@@ -55,6 +55,16 @@ ul {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    height: 80px; /* header의 높이를 명시 */
+}
+
 .header-nav {
     z-index: 3000;
     background-color: white;
@@ -193,39 +203,46 @@ ul {
     transition: background-color 0.1s ease-in-out;
     cursor: pointer;
     user-select: none;
-    pointer-events: none;
+    /* pointer-events: none; */
+    pointer-events: auto;
+    transition: opacity 0.2s ease-in-out; /* 부드러운 전환 효과 */
+    z-index: -1; /* 아이콘 뒤에 배경이 나타나도록 */
 }
 
 .list-icon:hover::after {
+    opacity: 1; /* hover 시 배경이 보이도록 설정 */
+    background-color: rgba(0, 0, 0, 0.1); /* hover 시 더 진한 회색 */
+}
+
+.list-icon[aria-expanded="true"]:hover::after {
     background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* .modal .show-modal {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 3000;
-    transition: all 0.3s ease;
+/* aria-expanded가 true일 때 배경색이 항상 보이도록 */
+.list-icon[aria-expanded="true"]::after {
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 1;
 }
-
-.show-modal {
-    display: block;
-} */
 
 .modal-box {
     display: none;
 }
 
-.hambuger-container {
-    transition: translate(calc(-100% + 969px), 69.5px);
+/* 기본 스타일: 큰 화면에 적용 (데스크탑) */
+.hamburger-container {
+    transform: translate(calc(-100% + 1380.5px), 62.5px);
     position: fixed;
     inset: 0 auto auto 0;
 }
 
-.hambuger-drop-box {
+/* 중간 크기 화면 (태블릿 크기) */
+@media screen and (max-width: 1024px) {
+    .hamburger-container {
+        transform: translate(calc(-100% + 969px), 69.5px);
+    }
+}
+
+.hamburger-drop-box {
     min-width: 150px;
     will-change: opacity, transform;
     animation: 100ms ease-in-out 0s 1 normal forwards running animation-1puce3u;
@@ -237,14 +254,14 @@ ul {
     box-shadow: rgba(170, 180, 190, 0.3) 0px 4px 20px;
 }
 
-.hambuger-box {
+.hamburger-box {
     -webkit-box-pack: start;
     flex-direction: column;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.hambuger-logo-box {
+.hamburger-logo-box {
     -webkit-box-pack: center;
     justify-content: center;
     flex-direction: row;
@@ -258,11 +275,11 @@ ul {
     transition: transform 0.1s ease-in-out;
 }
 
-.hambuger-logo-tag {
+.hamburger-logo-tag {
     cursor: pointer;
 }
 
-.hambuger-logo-tag::after {
+.hamburger-logo-tag::after {
     content: "";
     position: absolute;
     border-radius: 8px;
@@ -270,7 +287,7 @@ ul {
     transition: background-color 0.1s ease-in-out;
 }
 
-.hambuger-image {
+.hamburger-image {
     -webkit-box-pack: center;
     justify-content: center;
     flex-direction: row;
@@ -282,7 +299,7 @@ ul {
     height: 48px;
 }
 
-.hambuger-text-container {
+.hamburger-text-container {
     -webkit-box-pack: start;
     justify-content: start;
     flex-direction: column;
@@ -290,15 +307,15 @@ ul {
     flex-wrap: nowrap;
 }
 
-.hambuger-text-box {
+.hamburger-text-box {
     border-radius: 8px;
     background-color: transparent;
     border-width: 1px;
     width: 100%;
-    padding: 0 8px 0 8px;
+    padding: 8px;
 }
 
-.hambuger-text {
+.hamburger-text {
     color: rgb(50, 54, 58);
     font-weight: 600;
     font: size 14px;
@@ -306,13 +323,13 @@ ul {
     -webkit-font-smoothing: antialiased;
 }
 
-.hambuger-text-interval {
+.hamburger-text-interval {
     -webkit-box-flex: 0;
     flex-grow: 0;
     flex-shrink: 0;
 }
 
-.hambuger-text-underline {
+.hamburger-text-underline {
     width: 100%;
     height: 1px;
     margin: 10px 0;
@@ -323,7 +340,7 @@ ul {
     flex-wrap: wrap;
 }
 
-.hambuger-text-underline::after {
+.hamburger-text-underline::after {
     content: "";
     clear: both;
     width: calc(100% - 16px);
@@ -356,6 +373,10 @@ ul {
     width: 100%;
 }
 
+.login-button:hover {
+    background-color: rgb(0, 143, 127);
+}
+
 .login-text {
     visibility: visible;
 }
@@ -363,6 +384,7 @@ ul {
 .main {
     display: flex;
     flex-direction: column;
+    margin-top: 80px;
 }
 
 .main-container {
@@ -429,6 +451,11 @@ ul {
     height: fit-content;
 }
 
+.banner-image img {
+    pointer-events: none; /* 클릭 차단 */
+    cursor: default; /* 기본 커서로 변경 */
+}
+
 .banner-margin {
     margin-left: 0;
 }
@@ -488,19 +515,13 @@ ul {
     cursor: pointer;
     user-select: none;
     transition: transform 0.1s ease-in-out;
+    border-radius: 12px; /* 요소 자체를 둥글게 */
+    background-color: rgba(0, 0, 0, 0); /* 기본 배경색 투명 */
 }
 
-.left-arrow-box::after {
-    content: "";
-    position: absolute;
-    border-radius: 12px;
-    top: -4px;
-    right: -4px;
-    bottom: -4px;
-    left: -4px;
-    transition: background-color 0.1s ease-in-out;
-    cursor: pointer;
-    user-select: none;
+.left-arrow-box:hover,
+.right-arrow-box:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* 마우스 오버 시 배경색 변경 */
 }
 
 .right-vertical-center {
@@ -523,18 +544,8 @@ ul {
     cursor: pointer;
     user-select: none;
     transition: transform 0.1s ease-in-out;
-}
-
-.right-arrow-box::after {
-    content: "";
-    position: absolute;
-    border-radius: 12px;
-    top: -4px;
-    right: -4px;
-    bottom: -4px;
-    left: -4px;
-    transition: background-color 0.1s ease-in-out;
-    cursor: pointer;
+    border-radius: 12px; /* 요소 자체를 둥글게 */
+    background-color: rgba(0, 0, 0, 0); /* 기본 배경색 투명 */
 }
 
 .banner-separation {
@@ -617,6 +628,18 @@ ul {
     margin-top: 0;
     margin-left: 0;
     display: flex;
+}
+
+/* 마우스를 올렸을 때 */
+.model-link1:hover,
+.model-link2:hover,
+.model-link3:hover,
+.model-link4:hover,
+.model-link5:hover {
+    background-color: #f1f1f1; /* 마우스를 올렸을 때 배경색 변경 */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 살짝 그림자 효과 추가 */
+    border-radius: 8px; /* 모서리를 둥글게 */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* 부드러운 전환 효과 */
 }
 
 .model-link1 {
@@ -787,4 +810,8 @@ ul {
     color: #fff;
     text-align: center; /* 텍스트를 중앙에 정렬 */
     padding-top: 20vh;
+}
+
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 1px;
 }

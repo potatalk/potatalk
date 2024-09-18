@@ -129,18 +129,38 @@
                                             <!-- 해당 부분은 슬라이드 이미지가 들어가면 되지만 클론 코딩한 사이트는 전부 div 형태로 작성되어 -->
                                             <!-- 시간 절약을 위해 이미지로 대체 -->
                                             <div class="banner-image banner-margin">
-                                                <a class="banner-link" href="">
-                                                    <img src="../static/image/image-banner-test.png" alt="" />
+                                                <a class="banner-link slide-5" href="#" id="">
+                                                    <img src="../static/image/image-banner-test5.png" alt="" />
                                                 </a>
                                             </div>
                                             <div class="banner-image">
-                                                <a class="banner-link" href="">
-                                                    <img src="../static/image/image-banner-test.png" alt="" />
+                                                <a class="banner-link slide-1" href="#">
+                                                    <img src="../static/image/image-banner-test1.png" alt="" />
+                                                </a>
+                                            </div>
+                                            <div class="banner-image">
+                                                <a class="banner-link slide-2" href="#">
+                                                    <img src="../static/image/image-banner-test2.png" alt="" />
+                                                </a>
+                                            </div>
+                                            <div class="banner-image">
+                                                <a class="banner-link slide-3" href="#">
+                                                    <img src="../static/image/image-banner-test3.png" alt="" />
+                                                </a>
+                                            </div>
+                                            <div class="banner-image">
+                                                <a class="banner-link slide-4" href="#">
+                                                    <img src="../static/image/image-banner-test4.png" alt="" />
                                                 </a>
                                             </div>
                                             <div class="banner-image banner-margin">
-                                                <a class="banner-link" href="">
-                                                    <img src="../static/image/image-banner-test.png" alt="" />
+                                                <a class="banner-link slide-5" href="#">
+                                                    <img src="../static/image/image-banner-test5.png" alt="" />
+                                                </a>
+                                            </div>
+                                            <div class="banner-image">
+                                                <a class="banner-link slide-1" href="#">
+                                                    <img src="../static/image/image-banner-test1.png" alt="" />
                                                 </a>
                                             </div>
                                         </div>
@@ -148,8 +168,8 @@
                                 </div>
                                 <div class="banner-count-box">
                                     <p class="banner-count">
-                                        1
-                                        <b class="banner-total-count">/ 3</b>
+                                        <span id="current-slide">1</span>
+                                        <b class="banner-total-count">/ 5</b>
                                     </p>
                                 </div>
                                 <div class="left-vertical-center">
@@ -368,13 +388,13 @@
         </footer>
         <div class="modal">
             <div class="modal-box" style="z-index: 3000; position: relative">
-                <div class="hambuger-container">
-                    <div class="hambuger-drop-box">
-                        <div class="hambuger-box">
-                            <div class="hambuger-logo-container">
-                                <div class="hambuger-logo-box">
-                                    <a href="/" class="hambuger-logo-tag">
-                                        <div class="hambuger-image">
+                <div class="hamburger-container">
+                    <div class="hamburger-drop-box">
+                        <div class="hamburger-box">
+                            <div class="hamburger-logo-container">
+                                <div class="hamburger-logo-box">
+                                    <a href="/" class="hamburger-logo-tag">
+                                        <div class="hamburger-image">
                                             <svg style="width: 140px; height: 43px" viewBox="0 0 140 43" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M3.05115 14.0831H0V31.863H11.8685V28.8844H3.05115V14.0831Z" fill="black"></path>
                                                 <path
@@ -410,22 +430,22 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="hambuger-text-container">
-                                    <div class="hambuger-text-box">
-                                        <a href="/" style="cursor: pointer">
-                                            <p class="hambuger-text">로그인</p>
+                                <div class="hamburger-text-container">
+                                    <div class="hamburger-text-box">
+                                        <a href="" style="cursor: pointer">
+                                            <p class="hamburger-text">로그인</p>
                                         </a>
                                     </div>
-                                    <div class="hambuger-text-interval"></div>
-                                    <div class="hambuger-text-box">
-                                        <a href="/" style="cursor: pointer">
-                                            <p class="hambuger-text">회원가입</p>
+                                    <div class="hamburger-text-interval"></div>
+                                    <div class="hamburger-text-box">
+                                        <a href="" style="cursor: pointer">
+                                            <p class="hamburger-text">회원가입</p>
                                         </a>
                                     </div>
-                                    <div class="hambuger-text-interval"></div>
-                                    <div class="hambuger-text-underline"></div>
-                                    <div class="hambuger-text-interval"></div>
-                                    <a class="login-button-tag" href="/">
+                                    <div class="hamburger-text-interval"></div>
+                                    <div class="hamburger-text-underline"></div>
+                                    <div class="hamburger-text-interval"></div>
+                                    <a class="login-button-tag" href="">
                                         <button class="login-button" type="button">
                                             <div class="login-text">로그인/회원가입</div>
                                         </button>
@@ -438,4 +458,6 @@
             </div>
         </div>
     </body>
+    <!-- main js -->
+    <script src="../static/js/main.js"></script>
 </html>
