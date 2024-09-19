@@ -65,7 +65,8 @@ ROOT_URLCONF = 'potatalkLLMProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates']
+        ,
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,8 +143,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # static 폴더를 지정
+]
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 배포 환경에서 사용할 STATIC_ROOT 설정
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # 배포 시 collectstatic으로 모아질 파일 경로
 
 # 파일 접근 시
 MEDIA_URL = '/upload/'
