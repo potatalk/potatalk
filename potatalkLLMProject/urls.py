@@ -20,11 +20,10 @@ from django.conf.urls.static import static
 from django.urls import path, include
 from django.conf import settings
 
-from kyusanLLM.views import MainView
+from main.views import MainView
 
 urlpatterns = [
     path('', MainView.as_view(), name='main'),
-    # path('kyusanLLM/', include('kyusanLLM.urls'))
     # path('admin/', admin.site.urls),
 ]
 
