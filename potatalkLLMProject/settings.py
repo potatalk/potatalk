@@ -15,6 +15,8 @@ import os
 
 import sys
 
+from decouple import config
+
 import pymysql
 pymysql.install_as_MySQLdb()
 
@@ -164,3 +166,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'upload')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 개인(김규산) GPT API 키 관리
+# OPENAI_API_KEY = config('OPENAI_API_KEY')
+OPENAI_API_KEY = config('OPENAI_API_KEY', default='default-api-key-here')
