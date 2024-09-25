@@ -21,9 +21,15 @@ from django.urls import path, include
 from django.conf import settings
 
 from main.views import MainView
+from kyusanLLM.views import InformationView, MessageView
 
 urlpatterns = [
     path('', MainView.as_view(), name='main'),
+    path('kyusanLLM/', include('kyusanLLM.urls')),
+    path('jooLLM/', include('jooLLM.urls')),
+    path('songLLM/', include('songLLM.urls')),
+    path('kangLLM/', include('kangLLM.urls')),
+    path('kyuilLLM/', include('kyuilLLM.urls')),
     # path('admin/', admin.site.urls),
 ]
 
