@@ -1,26 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/static/css/message/message.css">
-  <title>PotaTalk :: 대화</title>
-</head>
-<body>
-  <!-- 해더 부분 -->
-  <header></header>
-  <!-- 메인부분 -->
+{% extends 'message/kang-base.html' %}
+{% load static %}
+{% block title %}PotaTalk :: 대화{% endblock %}
+{% block static %}
+<link rel="stylesheet" href="/static/css/message/message.css">
+{% endblock %}
+{% block main %}
+<!-- 메인부분 -->
   <main class="main">
     <div class="top-wrap">
       <div class="middle-wrap">
         <div class="bottom-wrap">
           <div class="top-section">
+            <a href='{% url 'kangLLM:information' %}'>  
             <button class="top-out-button-box">
               <svg width="20" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg" foundation="[object Object]" class="top-out-button InnerIconstyled__Icon-ch-front__sc-197h5bb-0 iXzzNw" defaultopacity="1" hoveredopacity="1" margintop="0" marginright="0" marginbottom="0" marginleft="8" withtheme="true">
                 <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M9.17255 16.4226C8.84711 16.748 8.31947 16.748 7.99404 16.4226L2.1607 10.5893C1.83527 10.2638 1.83527 9.73619 2.1607 9.41075L7.99404 3.57742C8.31947 3.25198 8.84711 3.25198 9.17255 3.57742C9.49799 3.90285 9.49799 4.43049 9.17255 4.75593L3.92847 10L9.17255 15.2441C9.49799 15.5695 9.49799 16.0972 9.17255 16.4226Z"></path>
               </svg>
             </button>
-            <!-- 상단 섹션 -->
+            </a>
+                <!-- 상단 섹션 -->
             <div class="top-information-wrap">
               <div class="top-information-container">
                 <!-- <div class="top-information-icon-box">
@@ -47,7 +45,7 @@
                 <!-- 메세지 (공통 후 서버 or 클라이언트 나뉨)-->
                 <div class="middle-message-wrap">
                   <!-- 시간(시, 분 겹칠 경우 비활성화) -->
-                  <div class="middle-message-time">오전 11:39</div>
+                  <div class="middle-message-time server-first-message"></div>
                   <!-- 공백 -->
                   <div class="middle-message-line"></div>
                   <!-- potatalk 메세지 상자 (server) -->
@@ -76,16 +74,15 @@
                                   <div class="server-message-text-wrap">
                                     <div>
                                       <div class="server-message-text-container">
-                                        <div id="server-message">안녕하세요<img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/man-tipping-hand.png" alt="man-tipping-hand" data-context-type="emoji" size="18" width="18" height="18"></div>
+                                        <div id="server-message-text">안녕하세요<img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/man-tipping-hand.png" alt="man-tipping-hand" data-context-type="emoji" size="18" width="18" height="18"></div>
                                         <div id="server-message-text">오늘은 어떤 와인을 찾고 계신가요?</div>
-                                        <div id="server-message-text">이러이러한 서비스를 제공합니다.</div>
+                                        <div id="server-message-text">오늘 날씨와 어울리는 와인 추천해줘🍷</div>
+                                        <div id="server-message-text">소고기엔 어떤 와인이 좋아?🍷</div>
                                         <div id="server-message-text" class="smessage-text-line"></div>
-                                        <div id="server-message-text"><b>Wine21를 기반으로 정보가 제공됩니다.</b></div>
+                                        <div id="server-message-text"><b>와인에 관련된 질문은 뭐든 환영합니다🤗</b></div>  
                                         <div id="server-message-text" class="smessage-text-line"></div>
-                                        <div id="server-message-text">문의를 남겨주시면 순차적으로 답변 드리겠습니다.</div>
-                                        <div id="server-message-text" class="message-text-line"></div>
-                                        <div id="server-message-text"><b><img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/warning.png" alt="warning" data-context-type="emoji" size="18" width="18" height="18"></b><b>채팅으로는 법률 상담을 받으실 수 없습니다.</b></div>
-                                        <div id="server-message-text"><b>이 외 문의사항은 dianakang@gmail.com으로 보내주세요</b></div>
+                                        <div id="server-message-text"><b><img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/warning.png" alt="warning" data-context-type="emoji" size="18" width="18" height="18"></b>환경에 따라 로딩이 길어질 수 있습니다🙇</div>
+                                        <div id="server-message-text">이 외 문의사항: dianakang@gmail.com</div>
                                       </div>
                                     </div>
                                   </div>
@@ -107,7 +104,7 @@
                 <!-- 메세지 (공통 후 서버 or 클라이언트 나뉨)-->
                 <div class="middle-message-wrap">
                   <!-- 시간(시, 분 겹칠 경우 비활성화) -->
-                  <div class="middle-message-time">오후 7:33</div>
+                  <div class="middle-message-time server-first-message"></div>
                   <!-- 공백 -->
                   <div class="middle-message-line"></div>
                   <!-- client 메세지 상자-->
@@ -129,11 +126,10 @@
                             <!-- 내용 -->
                             <div class="client-message-content-wrap">
                               <div class="client-message-content-container">
-                                <div class="client-message-content-box">
-                                  <div id="client-message-text">안녕하세요~</div>
-                                  <div id="client-message-text" class="message-text-line"></div>
-                                  <div id="client-message-text">뇨뇨뇨뇨뇨뇨</div>
-                                </div>
+{#                                <div class="client-message-content-box">#}
+{#                                  <div id="client-message-text">메세지를 입력해주세요!</div>#}
+{#                                  <div id="client-message-text"></div>#}
+{#                                </div>#}
                               </div>
                             </div>
                           </div>
@@ -186,6 +182,12 @@
       </div>
     </div>
   </main>
-</body>
-</html>
-<script src="/static/js/message/kangLLM.js"></script>
+{% endblock %}
+{% block js%}
+    <script src="{% static 'js/message/kangLLM.js' %}"></script>
+    <script>
+        // 템플릿 내에서 Django의 URL 템플릿 태그를 사용하여 URL을 JavaScript에 전달
+        const messageConnectUrl = "{% url 'kangLLM:message_send' %}";
+        const csrf_token = '{{csrf_token}}';
+    </script>
+{% endblock%}
