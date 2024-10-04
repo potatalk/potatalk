@@ -94,11 +94,13 @@ DATABASES = {
         # DATABASE 이름
         'NAME': 'potatalk',
         # 계정 이름
-        'USER': 'potatalk',
+        'USER': 'mysql',
+        # 'USER': 'potatalk',
         # 계정 비밀번호
         'PASSWORD': '1234',
         # DBMS가 설치된 서버 PC의 IP, (127.0.0.1 = 로컬)
-        'HOST': '52.78.208.126',
+        'HOST': '127.0.0.1',
+        # 'HOST': '52.78.208.126',
         # DBMS의 포트번호
         'PORT': '3306'
     }
