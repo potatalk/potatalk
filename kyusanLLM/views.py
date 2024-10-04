@@ -9,11 +9,9 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 # GPT API 를 사용하기 위한 라이브러리
-from langchain_openai import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
-from langchain.vectorstores import FAISS
-from langchain.chains import ConversationalRetrievalChain
-
+from langchain.prompts import PromptTemplate
+from langchain import LLMChain
 from potatalkLLMProject import settings
 
 
@@ -62,8 +60,16 @@ class MessageConnectView(View):
             user_input = client_message
             print(user_input)
 
-            # GPT-4 모델을 사용하여 답변 생성 (retriever 필요 없음)
-            llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo', openai_api_key=settings.OPENAI_API_KEY)
+            # GPT-3.5-turbo 모델을 사용하여 답변 생성 (retriever 필요 없음)
+            llm_origin = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo', openai_api_key=settings.OPENAI_API_KEY)
+
+            response_origin = llm_origin.invoke(user_input)
+            chatbot_response = response_origin.content  # AIMessage 객체에서 content 속성을 사용
+            print(f"chatbot_response{chatbot_response}")
+
+            # GPT-3.5-turbo 을 fine-tuning 한 모델을 사용하여 답변 생성
+            llm = ChatOpenAI(temperature=0.3, model_name='ft:gpt-3.5-turbo-0125:personal::AEYIQstN',
+                             openai_api_key=settings.OPENAI_API_KEY)
 
             # 'invoke()' 메소드로 문자열을 전달
             response = llm.invoke(user_input)
@@ -72,7 +78,7 @@ class MessageConnectView(View):
             chatbot_response = response.content  # AIMessage 객체에서 content 속성을 사용
 
             # 챗봇의 응답을 세션에 저장
-            request.session['history'].append((user_input, chatbot_response))  # GPT-4가 반환하는 텍스트 응답
+            request.session['history'].append((user_input, chatbot_response))  # GPT가 반환하는 텍스트 응답
             print('client_message: ', client_message)
             print('chatbot_response', chatbot_response)
             return JsonResponse({
