@@ -25,9 +25,12 @@ class InputAPI(APIView):
 
         # GPT 모델을 사용하여 답변 생성 (retriever 필요 없음)
         llm = ChatOpenAI(temperature=0, model_name='ft:gpt-3.5-turbo-0125:personal::AFdUlGjP', openai_api_key=settings.OPENAI_API_KEY_KYUIL)
+        # llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo-0125', openai_api_key=settings.OPENAI_API_KEY_KYUIL)
 
         # 'invoke()' 메소드로 문자열을 전달
         response = llm.invoke(user_input)
+
+        # print(response)
 
         # `AIMessage` 객체에서 텍스트 응답을 추출
         # AI의 대답

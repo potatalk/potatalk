@@ -14,7 +14,7 @@ import os
 
 import sys
 
-# from decouple import config
+from decouple import config
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -172,5 +172,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # OPENAI_API_KEY = config('OPENAI_API_KEY', default='default-api-key-here')
 
 # 김규일 GPT API KEY
-# OPENAI_API_KEY_KYUIL = config('OPENAI_API_KEY', default='default-api-key-here')
+OPENAI_API_KEY_KYUIL = config('OPENAI_API_KEY', default='default-api-key-here')
 
