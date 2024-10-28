@@ -9,13 +9,12 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
 from pathlib import Path
 import os
 
 import sys
 
-# from decouple import config
+from decouple import config
 
 import pymysql
 pymysql.install_as_MySQLdb()
@@ -99,8 +98,7 @@ DATABASES = {
         # 계정 비밀번호
         'PASSWORD': '1234',
         # DBMS가 설치된 서버 PC의 IP, (127.0.0.1 = 로컬)
-        'HOST': '127.0.0.1',
-        # 'HOST': '52.78.208.126',
+        'HOST': '52.78.208.126',
         # DBMS의 포트번호
         'PORT': '3306'
     }
@@ -172,3 +170,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 개인(김규산) GPT API 키 관리
 # OPENAI_API_KEY = config('OPENAI_API_KEY')
 # OPENAI_API_KEY = config('OPENAI_API_KEY', default='default-api-key-here')
+
+# 김규일 GPT API KEY
+OPENAI_API_KEY_KYUIL = config('OPENAI_API_KEY', default='default-api-key-here')
+
