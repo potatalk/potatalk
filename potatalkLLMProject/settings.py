@@ -174,3 +174,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # 김규일 GPT API KEY
 OPENAI_API_KEY_KYUIL = config('OPENAI_API_KEY', default='default-api-key-here')
 
+OPENAI_API_KEY_NICK = "비~밀~"
+
+

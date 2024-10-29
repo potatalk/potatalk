@@ -1,0 +1,195 @@
+{% extends 'message/kyusan-base.html' %}
+{% load static %}
+{% block title %}PotaTalk :: 대화{% endblock %}
+{% block static %}
+<link rel="stylesheet" href="/static/css/message/message.css">
+{% endblock %}
+{% block main %}
+<!-- 메인부분 -->
+<main class="main">
+  <div class="top-wrap">
+    <div class="middle-wrap">
+      <div class="bottom-wrap">
+        <div class="top-section">
+          <a href="{% url 'jooLLM:information' %}">
+            <button class="top-out-button-box">
+            <svg width="20" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg" foundation="[object Object]" class="top-out-button InnerIconstyled__Icon-ch-front__sc-197h5bb-0 iXzzNw" defaultopacity="1" hoveredopacity="1" margintop="0" marginright="0" marginbottom="0" marginleft="8" withtheme="true">
+              <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M9.17255 16.4226C8.84711 16.748 8.31947 16.748 7.99404 16.4226L2.1607 10.5893C1.83527 10.2638 1.83527 9.73619 2.1607 9.41075L7.99404 3.57742C8.31947 3.25198 8.84711 3.25198 9.17255 3.57742C9.49799 3.90285 9.49799 4.43049 9.17255 4.75593L3.92847 10L9.17255 15.2441C9.49799 15.5695 9.49799 16.0972 9.17255 16.4226Z"></path>
+            </svg>
+          </button>
+          </a>
+          <!-- 상단 섹션 -->
+          <div class="top-information-wrap">
+            <div class="top-information-container">
+              <!-- <div class="top-information-icon-box">
+                <div class="top-information-icon">
+                  <img class="top-information-icon-img" width="24" height="24" src="https://cf.channel.io/thumb/200x200/pub-file/28129/666953f5e066815338df/tmp-4182974801" alt="">
+                </div>
+                <div class="top-information-icon">
+                  <img width="24" height="24" src="https://cf.channel.io/thumb/200x200/pub-file/28129/6450a5acbfafc0337145/tmp-3405972587.webp" alt="">
+                </div>
+              </div> -->
+              <div class="top-information-text-box">
+                <div class="top-information-main-text-box">
+                  <div class="top-information-main-text">PotaTalk</div>
+                </div>
+                <!-- <div class="top-information-sub-text">몇 분 내 답변 받으실 수 있어요</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 중간 섹션 -->
+        <div class="middle-section">
+          <section class="middle-main-message-wrap">
+            <div class="message-list">
+              <!-- 메세지 (공통 후 서버 or 클라이언트 나뉨)-->
+              <div class="middle-message-wrap">
+                <!-- 시간(시, 분 겹칠 경우 비활성화) -->
+                <div class="middle-message-time server-first-message">오전 11:39</div>
+                <!-- 공백 -->
+                <div class="middle-message-line"></div>
+                <!-- potatalk 메세지 상자 (server) -->
+                <div class="server-message-container">
+                  <div class="server-message-box">
+                    <div class="server-message-section">
+                      <!-- 이름 -->
+                      <div class="server-message-name-box">
+                        <div class="server-message-name">PotaTalk</div>
+                      </div>
+                      <!-- server 메세지 -->
+                      <div class="server-message-all-wrap">
+                        <div clss="server-messageall-container">
+                          <div class="server-message-all-section">
+                            <!-- 아이콘 -->
+                            <div class="server-message-icon-section">
+                              <div class="server-message-icon-wrap">
+                                <div class="server-message-icon-box">
+                                  <img class="server-message-icon-img" width="30" height="30" src="https://cf.channel.io/thumb/200x200/pub-file/28129/63e35c5b4c0474bf7034/tmp-3602965324.webp" alt="">
+                                </div>
+                              </div>
+                            </div>
+                            <!-- 내용 -->
+                            <div class="server-message-content-wrap">
+                              <div class="server-message-content-container">
+                                <div class="server-message-text-wrap">
+                                  <div>
+                                    <div class="server-message-text-container">
+                                      <div id="server-message-text">안녕하세요, 의뢰인님<img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/man-tipping-hand.png" alt="man-tipping-hand" data-context-type="emoji" size="18" width="18" height="18"></div>
+                                      <div id="server-message-text">로앤굿 서비스 이용에 도움이 필요하신가요?</div>
+                                      <div id="server-message-text">업무시간은 평일 오전 9시 부터 오후 6시 까지 입니다.</div>
+                                      <div id="server-message-text" class="smessage-text-line"></div>
+                                      <div id="server-message-text"><b><img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/warning.png" alt="warning" data-context-type="emoji" size="18" width="18" height="18"></b><b>9월16일~9월19일 추석 연휴입니다.</b><b><img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/warning.png" alt="warning" data-context-type="emoji" size="18" width="18" height="18"></b></div>
+                                      <div id="server-message-text" class="smessage-text-line"></div>
+                                      <div id="server-message-text">문의를 남겨주시면 순차적으로 답변 드리겠습니다.</div>
+                                      <div id="server-message-text" class="message-text-line"></div>
+                                      <div id="server-message-text"><b><img class="server-message-text-icon" src="https://cf.channel.io/asset/emoji/images/80/warning.png" alt="warning" data-context-type="emoji" size="18" width="18" height="18"></b><b>채팅으로는 법률 상담을 받으실 수 없습니다.</b></div>
+                                      <div id="server-message-text"><b>법률 상담은 아래 버튼을 통해서 사건 문의를 남겨주세요.</b></div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- <div class="server-message-button-wrap">
+                                  <a class="server-message-button" target="_blank" rel="noopener noreferrer" href="https://www.lawandgood.com/quotation/question">
+                                    <div class="server-message-button-text">사건 문의하기📝</div>
+                                  </a>
+                                </div> -->
+                              </div>
+                              <div class="server-message-right-margin"></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- 메세지 (공통 후 서버 or 클라이언트 나뉨)-->
+              <div class="middle-message-wrap">
+                <!-- 시간(시, 분 겹칠 경우 비활성화) -->
+                <div class="middle-message-time">오후 7:33</div>
+                <!-- 공백 -->
+                <div class="middle-message-line"></div>
+                <!-- client 메세지 상자-->
+                <div class="client-message-container">
+                  <div class="client-message-box">
+                    <div class="client-message-section">
+                      <!-- client 메세지 -->
+                      <div class="client-message-all-warp">
+                        <div class="client-message-all-container">
+                          <!-- 공백 -->
+                          <div class="client-message-left-margin">
+                            <!-- 메세지 삭제 버튼 (포커스 시 활성화) -->
+                            <!-- <button class="client-message-delete-button hidden" type="button">
+                              <svg class="client-message-delete-button-img" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" foundation="[object Object]" data-testid="bezier-react-icon" margintop="0" marginright="0" marginbottom="0" marginleft="0" aria-hidden="true">
+                                <path fill="currentColor" fill-rule="evenodd" d="M9.75 4.75A2.257 2.257 0 0 0 12 7a2.257 2.257 0 0 0 2.25-2.25A2.257 2.257 0 0 0 12 2.5a2.257 2.257 0 0 0-2.25 2.25m2.25 9.5A2.257 2.257 0 0 1 9.75 12 2.257 2.257 0 0 1 12 9.75 2.257 2.257 0 0 1 14.25 12 2.257 2.257 0 0 1 12 14.25m0 7.25a2.257 2.257 0 0 1-2.25-2.25A2.257 2.257 0 0 1 12 17a2.257 2.257 0 0 1 2.25 2.25A2.257 2.257 0 0 1 12 21.5" clip-rule="evenodd"></path>
+                              </svg>
+                            </button> -->
+                          </div>
+                          <!-- 내용 -->
+                          <div class="client-message-content-wrap">
+                            <div class="client-message-content-container">
+{#                              <div class="client-message-content-box">#}
+{#                                <div id="client-message-text">안녕하세요~</div>#}
+{#                                <div id="client-message-text" class="message-text-line"></div>#}
+{#                                <div id="client-message-text">뇨뇨뇨뇨뇨뇨</div>#}
+{#                              </div>#}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- 메세지 공백 -->
+            <div class="middel-message-margin loading hidden">
+              <img src="https://velog.velcdn.com/images/0307ssk/post/d9e2bd73-1f72-4a5d-a990-24ac10c69ad8/image.gif" style='width: 5%';/>
+            </div>
+            <div class="middel-message-margin"></div>
+          </section>
+        </div>
+        <!-- 하단 섹션 -->
+        <section class="bottom-section">
+          <div class="bottom-message-wrap">
+            <div class="bottom-message-margin"></div>
+            <div class="bottom-message-container">
+              <!-- 메세지 입력 -->
+              <div class="bottom-message-input-box">
+                <label class="bottom-message-input-label" for="message_input"></label>
+                <textarea class="bottom-message-input-textarea" id="message_input" foundation="[object Object]" data-ch-testid="messenger-footer-text-area" placeholder="메시지를 입력해주세요." style="height: 34px !important;"></textarea>
+              </div>
+              <!-- 아이콘 보내기 -->
+              <!-- <button class="bottom-message-icon-box">
+                <svg class="bottom-message-icon-img" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" foundation="[object Object]" data-testid="bezier-react-icon" margintop="0" marginright="0" marginbottom="0" marginleft="0">
+                  <path fill="currentColor" fill-rule="evenodd" d="M2 12C2 6.478 6.477 2 12 2s10 4.478 10 10-4.478 10-10 10S2 17.522 2 12m18 0c0-4.41-3.589-8-8-8-4.412 0-8 3.59-8 8s3.588 8 8 8c4.411 0 8-3.589 8-8m-8.01 5.708h.004c4.317 0 5.506-3.459 5.554-3.606a1 1 0 1 0-1.899-.625v.001c-.02.057-.791 2.23-3.655 2.23h-.003c-2.823-.002-3.608-2.14-3.643-2.239a.999.999 0 0 0-1.897.632c.048.147 1.232 3.603 5.54 3.607m-3.204-5.883c-.845 0-1.199-.61-1.199-2.105s.354-2.106 1.2-2.106c.844 0 1.197.611 1.197 2.106s-.353 2.105-1.198 2.105m5.229-2.105c0 1.495.353 2.105 1.199 2.105.845 0 1.198-.61 1.198-2.105s-.353-2.106-1.198-2.106c-.846 0-1.199.611-1.199 2.106" clip-rule="evenodd"></path>
+                </svg>
+              </button> -->
+              <!-- 파일 보내기 (메세지 입력 시 비활성화) -->
+              <!-- <input class="bottom-message-file-input" type="file" multiple id="file_uploads">
+              <label class="bottom-message-file-box" for="file_uploads">
+                <svg class="bottom-message-file-img" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" foundation="[object Object]" data-testid="bezier-react-icon" margintop="0" marginright="0" marginbottom="0" marginleft="0" aria-hidden="true">
+                  <path fill="currentColor" fill-rule="evenodd" d="M20.486 13.487a1 1 0 0 0-1.414 0l-5.537 5.537a5 5 0 0 1-7.07-7.07l7.075-7.077a2.992 2.992 0 1 1 4.233 4.232l-7.16 7.159a1.005 1.005 0 1 1-1.423-1.422l5.62-5.62a1 1 0 1 0-1.414-1.415l-5.62 5.62a3.005 3.005 0 0 0 0 4.252 3.005 3.005 0 0 0 4.252-.001l7.16-7.159a4.993 4.993 0 1 0-7.062-7.06L5.05 10.54a7 7 0 0 0 9.9 9.9l5.536-5.538a1 1 0 0 0 0-1.414" clip-rule="evenodd"></path>
+                </svg>
+              </label> -->
+              <!-- 메세지 전송 버튼 (메세지 입력 시 send-button-change 클래스 추가) -->
+              <button class="bottom-message-send-button disable">
+                <svg class="bottom-message-send-img" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" foundation="[object Object]" defaultopacity="1" hoveredopacity="1" margintop="0" marginright="0" marginbottom="0" marginleft="0" withtheme="true">
+                  <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M20.9186 5.01057L2.91895 5.01034C2.51794 5.00977 2.15508 5.24929 1.99895 5.61886C1.84146 5.98808 1.92039 6.41478 2.19802 6.70366L7.74779 12.4761L17.7176 7.45444L18.0686 8.06239L8.74519 14.2097L10.9214 21.931C11.0307 22.3183 11.3609 22.6022 11.7599 22.6513C11.9807 22.6797 12.1991 22.6321 12.3836 22.5256C12.5326 22.4396 12.6604 22.315 12.7501 22.1604L21.7846 6.51053C21.964 6.20137 21.9636 5.82058 21.7846 5.51055C21.6061 5.20138 21.2765 5.01059 20.9186 5.01057Z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+{% block js%}
+    <script src="{% static 'js/message/joo-message.js' %}"></script>
+    <script>
+        // 템플릿 내에서 Django의 URL 템플릿 태그를 사용하여 URL을 JavaScript에 전달
+        const messageConnectUrl = "{% url 'jooLLM:message-connect' %}";
+        const csrf_token = '{{csrf_token}}';
+    </script>
+{% endblock%}
